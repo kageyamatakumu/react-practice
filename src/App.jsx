@@ -4,6 +4,7 @@ import { useCallback} from 'react';
 import { ColoredMessage } from './components/ColoredMessage';
 import { CssModules } from './components/CssModules';
 import { Reset } from './components/ResetCount';
+import { GlobalState } from './components/GlobalState';
 
 export const App = () => {
 
@@ -18,6 +19,7 @@ export const App = () => {
 
     const onClickReset = useCallback(() => {
         setNum(0)
+        setText('リセットされた')
     }, [])
 
     useEffect(() => {
@@ -33,6 +35,7 @@ export const App = () => {
             <button onClick={onClickButton}>ボタン</button>
             <p>{num}</p>
             <Reset t={onClickReset}/>
+            <GlobalState/>
         </div>
     )
 }
